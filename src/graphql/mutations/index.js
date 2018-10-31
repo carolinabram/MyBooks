@@ -1,12 +1,12 @@
 import Users from './users';
 import Categories from './categories';
 import Ratings from './ratings';
-import Movies from './movies';
+import Books from './books';
 
 
 export default {
     ...Users,
     ...Categories,
     ...Ratings,
-    ...Movies
+    ...Books
 }

@@ -6,9 +6,9 @@ import { RatingType } from './ratings';
 import Category from '../../schemas/categories';
 import Rating from '../../schemas/ratings';
 
-export const MovieType = new GRAPHQL.GraphQLObjectType({
-    name: 'Movies',
-    description: 'Types of Movies',
+export const BookType = new GRAPHQL.GraphQLObjectType({
+    name: 'Books',
+    description: 'Types of Books',
     fields : () => ({
         _id:{
             type: GRAPHQL.GraphQLNonNull(GRAPHQL.GraphQLID)
@@ -19,38 +19,32 @@ export const MovieType = new GRAPHQL.GraphQLObjectType({
         year: {
             type: GRAPHQL.GraphQLString
         },
-        director: {
+        author: {
             type: GRAPHQL.GraphQLString
         },
         rank: {
             type: GRAPHQL.GraphQLList(GRAPHQL.GraphQLFloat)
         },
-        plot : {
+        description : {
             type: GRAPHQL.GraphQLString
         },
-        cast: {
-            type: GRAPHQL.GraphQLString
-        },
-        length: {
+        pages: {
             type: GRAPHQL.GraphQLString
         },
         image: {
             type: GRAPHQL.GraphQLString
         },
-        url: {
-            type: GRAPHQL.GraphQLString
-        },
         rating: {
             type: RatingType,
-            resolve(movie){
-                const {rating} = movie
+            resolve(book){
+                const {rating} = book
                 return Rating.findById(rating).exec()
             }
         },
         category: {
             type: CategoryType,
-            resolve(movie){
-                const {category} = movie
+            resolve(book){
+                const {category} = book
                 return Category.findById(category).exec()
             }
         }
@@ -58,32 +52,26 @@ export const MovieType = new GRAPHQL.GraphQLObjectType({
         
     })
 })
-export const MovieInputType = new GRAPHQL.GraphQLInputObjectType({
-    name: 'AddMovies',
-    description: 'Types of Movies',
+export const BookInputType = new GRAPHQL.GraphQLInputObjectType({
+    name: 'AddBooks',
+    description: 'Types of Books',
     fields : () => ({
         name : {
             type : GRAPHQL.GraphQLString
         },
+        description: {
+            type: GRAPHQL.GraphQLString
+        },
         year: {
             type: GRAPHQL.GraphQLString
         },
-        director: {
+        author: {
             type: GRAPHQL.GraphQLString
         },
-        plot : {
-            type: GRAPHQL.GraphQLString
-        },
-        cast: {
-            type: GRAPHQL.GraphQLString
-        },
-        length: {
+        pages: {
             type: GRAPHQL.GraphQLString
         },
         image: {
-            type: GRAPHQL.GraphQLString
-        },
-        url: {
             type: GRAPHQL.GraphQLString
         },
         rating: {
@@ -97,9 +85,9 @@ export const MovieInputType = new GRAPHQL.GraphQLInputObjectType({
     })
 })
 
-export const RankMovieType = new GRAPHQL.GraphQLInputObjectType({
+export const RankBookType = new GRAPHQL.GraphQLInputObjectType({
     name: 'addRank',
-    description: 'Add rank to Movie',
+    description: 'Add rank to Book',
     fields: () =>({
         rank:{
             type:GRAPHQL.GraphQLFloat

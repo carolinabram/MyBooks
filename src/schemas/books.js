@@ -37,4 +37,4 @@ const BooksSchema = new Schema({
     }
 },{collection: 'books', timestamps: true});
 
-export default mongoose.model('books', MoviesSchema);
+export default mongoose.model('books', BooksSchema);

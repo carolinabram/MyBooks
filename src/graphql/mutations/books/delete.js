@@ -1,5 +1,5 @@
 import Book from '../../../schemas/books';
-import {BookType} from '../../types/movies';
+import {BookType} from '../../types/books';
 import * as graphql from 'graphql';
 
 export default {
