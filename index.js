@@ -38,7 +38,7 @@ app.use((cors()));
             if(err){
                 console.log(err)
             }
-            res.send("usuario registrado");
+            res.send("usuario registrado carolina");
         }))
 
     })
