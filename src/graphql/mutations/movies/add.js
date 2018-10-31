@@ -1,22 +1,22 @@
-import Movie from '../../../schemas/movies';
-import {MovieType,MovieInputType } from '../../types/movies';
+import Book from '../../../schemas/books';
+import {BookType,BookInputType } from '../../types/books';
 import * as graphql from 'graphql';
 
 
 export default {
 
-    type:MovieType,
+    type:BookType,
     args:{
         data:{
             name:'data',
-            type: new graphql.GraphQLNonNull(MovieInputType)
+            type: new graphql.GraphQLNonNull(BookInputType)
         }
     },
     resolve(root,params){
-        const movie  = new Movie(params.data)
-        const newMovie = movie.save();
-        if(!newMovie) throw new Error("Problema al crear movie")
-        return newMovie
+        const book  = new Book(params.data)
+        const newBook = book.save();
+        if(!newBook) throw new Error("Problema al crear book")
+        return newBook
     }
 
 

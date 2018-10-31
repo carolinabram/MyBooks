@@ -1,9 +1,9 @@
 import * as GRAPHQL from 'graphql';
-import Movie from '../../../schemas/movies';
-import { MovieType, RankMovieType } from '../../types/movies';
+import Book from '../../../schemas/books';
+import { BookType, RankBookType } from '../../types/books';
 
 export default {
-    type: MovieType,
+    type: BookType,
     args:{
         id:{
             name:'ID',
@@ -11,14 +11,14 @@ export default {
         },
         data:{
             name:"data",
-            type: GRAPHQL.GraphQLNonNull(RankMovieType)
+            type: GRAPHQL.GraphQLNonNull(RankBookType)
         }
     },resolve(root,params){
         const {id,data} = params
         console.log(data)
-        return Movie.findByIdAndUpdate(id,{$push:{rank:data.rank}})
-            .then((movie)=>{
-                return Movie.findById(movie.id).exec()
+        return Book.findByIdAndUpdate(id,{$push:{rank:data.rank}})
+            .then((book)=>{
+                return Book.findById(book.id).exec()
                 
             })
     }

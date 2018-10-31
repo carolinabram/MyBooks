@@ -1,12 +1,12 @@
 import * as GRAPHQL from 'graphql';
 
-import Movie from '../../../schemas/movies';
+import Book from '../../../schemas/books';
 
-import { MovieType } from '../../types/movies';
+import { BookType } from '../../types/books';
 
-const querySingleMovie = {
+const querySingleBook = {
 
-    type: MovieType,
+    type: BookType,
     args: {
         id:{
             name : 'ID',
@@ -14,9 +14,9 @@ const querySingleMovie = {
         }
     },
     resolve(root,params){
-        const movie = Movie.findById(params.id).exec()
-        return movie
+        const book = Book.findById(params.id).exec()
+        return book
     }
 }
 
-export default querySingleMovie;
+export default querySingleBook;

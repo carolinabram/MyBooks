@@ -1,10 +1,10 @@
-import Movie from '../../../schemas/movies';
-import {MovieType} from '../../types/movies';
+import Book from '../../../schemas/books';
+import {BookType} from '../../types/movies';
 import * as graphql from 'graphql';
 
 export default {
 
-    type:MovieType,
+    type:BookType,
     args:{
         id:{
             name:'ID',
@@ -12,9 +12,9 @@ export default {
         }
     },
     resolve(root,params){
-        const deletedMovie = Movie.findByIdAndRemove(params.id).exec()
-        if(!deletedMovie) throw Error("Error on delete movie")
-        return deletedMovie
+        const deletedBook = Book.findByIdAndRemove(params.id).exec()
+        if(!deletedBook) throw Error("Error on delete book")
+        return deletedBook
                         
     }
 

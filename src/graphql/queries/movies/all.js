@@ -1,16 +1,16 @@
 import * as GRAPHQL from 'graphql';
 
-import Movie from '../../../schemas/movies';
-import { MovieType } from '../../types/movies';
+import Book from '../../../schemas/books';
+import { BookType } from '../../types/books';
 
 
-const queryAllMovies = {
-    type : new GRAPHQL.GraphQLList(MovieType),
+const queryAllBooks = {
+    type : new GRAPHQL.GraphQLList(BookType),
     resolve(){
-        const movies = Movie.find().exec()
-        if(!movies) throw new Error("Error at fetching movies");
-        return movies
+        const books = Book.find().exec()
+        if(!books) throw new Error("Error at fetching books");
+        return books
     }
 }
 
-export default queryAllMovies;
+export default queryAllBooks;

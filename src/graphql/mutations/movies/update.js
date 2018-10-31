@@ -1,11 +1,11 @@
-import Movie from '../../../schemas/movies';
-import {MovieType,MovieInputType} from '../../types/movies';
+import Book from '../../../schemas/books';
+import {BookType,BookInputType} from '../../types/books';
 import * as graphql from 'graphql';
 
 
 export default {
 
-    type:MovieType,
+    type:BookType,
     args:{
         id:{
             name:'ID',
@@ -13,12 +13,12 @@ export default {
         },
         data:{
             name:'data',
-            type: new graphql.GraphQLNonNull(MovieInputType)
+            type: new graphql.GraphQLNonNull(BookInputType)
         }
     },
     resolve(root,params){
-        return Movie.findByIdAndUpdate(params.id,{$set:{...params.data}})
-                        .then((movie) => Movie.findById(movie.id).exec())
-                        .catch((err) => new Error ('Couldnt update movie data',err))
+        return Book.findByIdAndUpdate(params.id,{$set:{...params.data}})
+                        .then((book) => Book.findById(book.id).exec())
+                        .catch((err) => new Error ('Couldnt update book data',err))
     }
 }

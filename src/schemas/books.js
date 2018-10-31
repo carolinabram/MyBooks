@@ -3,21 +3,19 @@ import mongoose, { mongo } from 'mongoose';
 const Schema = mongoose.Schema;
 
 
-const MoviesSchema = new Schema({
+const BooksSchema = new Schema({
 
     'name' : {
         type: String,
         require: true
     },
-    'category': {
-        type: Schema.Types.ObjectId,
-        ref: 'categories'
+    'description': {
+        type: String
     },
     'year': {
-        type: Number,
-
+        type: Number
     },
-    'director': {
+    'author': {
         type: String,
     },
     'rank': {
@@ -27,25 +25,16 @@ const MoviesSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'ratings'
     },
-    'plot': {
-        type: String,
-    
-    },
-    'cast': {
-        type: String,
-    },
-    'length': {
+    'pages': {
         type: String,
     },
     'image': {
         type: String
     },
-    url: {
-        type: String
+    'category': {
+        type: Schema.Types.ObjectId,
+        ref: 'categories'
     }
+},{collection: 'books', timestamps: true});
 
-    
-    
-},{collection: 'movies', timestamps: true});
-
-export default mongoose.model('movies', MoviesSchema);
+export default mongoose.model('books', MoviesSchema);
