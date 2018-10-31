@@ -45,7 +45,7 @@ var PORT = process.env.PORT || 3000;
 app.listen(PORT, function () {
     console.log('Server WORKS on port ' + PORT);
 });
-_mongoose2.default.connect('mongodb://gabo16:gabo16@ds123173.mlab.com:23173/backend');
+_mongoose2.default.connect('mongodb://carolina:carolina1@ds243963.mlab.com:43963/libreria');
 var db = _mongoose2.default.connection;
 db.on('error', function () {
     return console.log("failed to connect to database");
@@ -64,7 +64,7 @@ app.use('/register', jsonParser, function (req, res) {
         if (err) {
             console.log(err);
         }
-        res.send("usuario registrado");
+        res.send("usuario registrado carolina");
     });
 });
 
