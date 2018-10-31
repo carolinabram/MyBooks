@@ -80,7 +80,6 @@ export const BookInputType = new GRAPHQL.GraphQLInputObjectType({
         category: {
             type: GRAPHQL.GraphQLString
         }
-
         
     })
 })
