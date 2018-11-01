@@ -20,12 +20,17 @@ var _addRank = require('./addRank');
 
 var _addRank2 = _interopRequireDefault(_addRank);
 
+var _addFavorite = require('./addFavorite');
+
+var _addFavorite2 = _interopRequireDefault(_addFavorite);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
     addBook: _add2.default,
     updateBook: _update2.default,
     deleteBook: _delete2.default,
-    addRank: _addRank2.default
+    addRank: _addRank2.default,
+    addFavorite: _addFavorite2.default
 
 };
