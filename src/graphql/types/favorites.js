@@ -24,7 +24,7 @@ export const FavoritesType = new GRAPHQL.GraphQLObjectType({
             type: BookType,
             resolve(favorite) {
                 const { book } = favorite
-                return Book.findById(user).exec()
+                return Book.findById(book).exec()
             }
         }
     })
@@ -32,7 +32,7 @@ export const FavoritesType = new GRAPHQL.GraphQLObjectType({
 
 export const FavoriteInputType = new GRAPHQL.GraphQLInputObjectType({
     name: 'addFavorite',
-    description: 'Add favorite to Book',
+    description: 'Add favorite Book',
     fields: () => ({
         user: {
             type: GRAPHQL.GraphQLString

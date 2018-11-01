@@ -46,7 +46,7 @@ var FavoritesType = exports.FavoritesType = new GRAPHQL.GraphQLObjectType({
                 resolve: function resolve(favorite) {
                     var book = favorite.book;
 
-                    return _books3.default.findById(user).exec();
+                    return _books3.default.findById(book).exec();
                 }
             }
         };
@@ -55,7 +55,7 @@ var FavoritesType = exports.FavoritesType = new GRAPHQL.GraphQLObjectType({
 
 var FavoriteInputType = exports.FavoriteInputType = new GRAPHQL.GraphQLInputObjectType({
     name: 'addFavorite',
-    description: 'Add favorite to Book',
+    description: 'Add favorite Book',
     fields: function fields() {
         return {
             user: {
