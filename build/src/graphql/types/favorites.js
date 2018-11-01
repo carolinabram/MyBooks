@@ -38,7 +38,7 @@ var FavoritesType = exports.FavoritesType = new GRAPHQL.GraphQLObjectType({
                 resolve: function resolve(favorite) {
                     var user = favorite.user;
 
-                    return _users3.default.findById(favorite).exec();
+                    return _users3.default.findById(user).exec();
                 }
             },
             book: {
@@ -46,7 +46,7 @@ var FavoritesType = exports.FavoritesType = new GRAPHQL.GraphQLObjectType({
                 resolve: function resolve(favorite) {
                     var book = favorite.book;
 
-                    return _books3.default.findById(favorite).exec();
+                    return _books3.default.findById(user).exec();
                 }
             }
         };
