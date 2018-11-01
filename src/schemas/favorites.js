@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 
 const FavoritesSchema = new Schema({
-    'user_id': {
+    'user': {
         type: Schema.Types.ObjectId,
         ref: 'users'
     },

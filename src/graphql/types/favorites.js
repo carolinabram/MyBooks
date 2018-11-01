@@ -17,14 +17,14 @@ export const FavoritesType = new GRAPHQL.GraphQLObjectType({
             type: UserType,
             resolve(favorite) {
                 const { user } = favorite
-                return User.findById(favorite).exec()
+                return User.findById(user).exec()
             }
         },
         book: {
             type: BookType,
             resolve(favorite) {
                 const { book } = favorite
-                return Book.findById(favorite).exec()
+                return Book.findById(user).exec()
             }
         }
     })
