@@ -14,14 +14,10 @@ var _categories = require('./categories');
 
 var _categories2 = _interopRequireDefault(_categories);
 
-var _ratings = require('./ratings');
-
-var _ratings2 = _interopRequireDefault(_ratings);
-
 var _books = require('./books');
 
 var _books2 = _interopRequireDefault(_books);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = _extends({}, _users2.default, _categories2.default, _ratings2.default, _books2.default);
+exports.default = _extends({}, _users2.default, _categories2.default, _books2.default);

@@ -11,15 +11,9 @@ var GRAPHQL = _interopRequireWildcard(_graphql);
 
 var _categories = require('./categories');
 
-var _ratings = require('./ratings');
-
 var _categories2 = require('../../schemas/categories');
 
 var _categories3 = _interopRequireDefault(_categories2);
-
-var _ratings2 = require('../../schemas/ratings');
-
-var _ratings3 = _interopRequireDefault(_ratings2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -55,11 +49,11 @@ var BookType = exports.BookType = new GRAPHQL.GraphQLObjectType({
                 type: GRAPHQL.GraphQLString
             },
             rating: {
-                type: _ratings.RatingType,
+                type: RatingType,
                 resolve: function resolve(book) {
                     var rating = book.rating;
 
-                    return _ratings3.default.findById(rating).exec();
+                    return Rating.findById(rating).exec();
                 }
             },
             category: {

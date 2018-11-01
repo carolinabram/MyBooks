@@ -1,10 +1,8 @@
 import * as GRAPHQL from 'graphql';
 
 import { CategoryType } from './categories';
-import { RatingType } from './ratings';
 
 import Category from '../../schemas/categories';
-import Rating from '../../schemas/ratings';
 
 export const BookType = new GRAPHQL.GraphQLObjectType({
     name: 'Books',

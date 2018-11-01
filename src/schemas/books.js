@@ -21,10 +21,6 @@ const BooksSchema = new Schema({
     'rank': {
         type: [Number]
     },
-    'ratings': {
-        type: Schema.Types.ObjectId,
-        ref: 'ratings'
-    },
     'pages': {
         type: String,
     },
