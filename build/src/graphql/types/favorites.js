@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.FavoriteInputType = exports.FavoritesType = undefined;
+exports.FavoritesType = undefined;
 
 var _graphql = require('graphql');
 
@@ -48,21 +48,6 @@ var FavoritesType = exports.FavoritesType = new GRAPHQL.GraphQLObjectType({
 
                     return _books3.default.findById(book).exec();
                 }
-            }
-        };
-    }
-});
-
-var FavoriteInputType = exports.FavoriteInputType = new GRAPHQL.GraphQLInputObjectType({
-    name: 'addFavorite',
-    description: 'Add favorite Book',
-    fields: function fields() {
-        return {
-            user: {
-                type: GRAPHQL.GraphQLString
-            },
-            book: {
-                type: GRAPHQL.GraphQLString
             }
         };
     }

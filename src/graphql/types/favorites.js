@@ -16,29 +16,16 @@ export const FavoritesType = new GRAPHQL.GraphQLObjectType({
         user: {
             type: UserType,
             resolve(favorite) {
-                const { user } = favorite
+                const {user} = favorite
                 return User.findById(user).exec()
             }
         },
         book: {
             type: BookType,
             resolve(favorite) {
-                const { book } = favorite
+                const {book} = favorite
                 return Book.findById(book).exec()
             }
-        }
-    })
-})
-
-export const FavoriteInputType = new GRAPHQL.GraphQLInputObjectType({
-    name: 'addFavorite',
-    description: 'Add favorite Book',
-    fields: () => ({
-        user: {
-            type: GRAPHQL.GraphQLString
-        },
-        book: {
-            type: GRAPHQL.GraphQLString
         }
     })
 })
