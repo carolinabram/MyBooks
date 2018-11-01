@@ -22,9 +22,9 @@ export const FavoritesType = new GRAPHQL.GraphQLObjectType({
         },
         book: {
             type: BookType,
-            resolve(book) {
+            resolve(favorite) {
                 const { book } = favorite
-                return Book.findById(book).exec()
+                return Book.findById(favorite).exec()
             }
         }
     })
