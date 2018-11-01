@@ -32,13 +32,6 @@ export const BookType = new GRAPHQL.GraphQLObjectType({
         image: {
             type: GRAPHQL.GraphQLString
         },
-        rating: {
-            type: RatingType,
-            resolve(book){
-                const {rating} = book
-                return Rating.findById(rating).exec()
-            }
-        },
         category: {
             type: CategoryType,
             resolve(book){

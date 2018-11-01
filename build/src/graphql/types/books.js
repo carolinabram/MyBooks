@@ -48,14 +48,6 @@ var BookType = exports.BookType = new GRAPHQL.GraphQLObjectType({
             image: {
                 type: GRAPHQL.GraphQLString
             },
-            rating: {
-                type: RatingType,
-                resolve: function resolve(book) {
-                    var rating = book.rating;
-
-                    return Rating.findById(rating).exec();
-                }
-            },
             category: {
                 type: _categories.CategoryType,
                 resolve: function resolve(book) {
