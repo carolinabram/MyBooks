@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.FavoriteType = exports.RankBookType = exports.BookInputType = exports.BookType = undefined;
+exports.RankBookType = exports.BookInputType = exports.BookType = undefined;
 
 var _graphql = require('graphql');
 
@@ -101,21 +101,6 @@ var RankBookType = exports.RankBookType = new GRAPHQL.GraphQLInputObjectType({
         return {
             rank: {
                 type: GRAPHQL.GraphQLFloat
-            }
-        };
-    }
-});
-
-var FavoriteType = exports.FavoriteType = new GRAPHQL.GraphQLInputObjectType({
-    name: 'addFavorite',
-    description: 'Add favorite Book',
-    fields: function fields() {
-        return {
-            user: {
-                type: GRAPHQL.GraphQLString
-            },
-            book: {
-                type: GRAPHQL.GraphQLString
             }
         };
     }

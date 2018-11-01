@@ -84,16 +84,3 @@ export const RankBookType = new GRAPHQL.GraphQLInputObjectType({
         }
     })
 })
-
-export const FavoriteType = new GRAPHQL.GraphQLInputObjectType({
-    name: 'addFavorite',
-    description: 'Add favorite Book',
-    fields: () => ({
-        user: {
-            type: GRAPHQL.GraphQLString
-        },
-        book: {
-            type: GRAPHQL.GraphQLString
-        }
-    })
-})
