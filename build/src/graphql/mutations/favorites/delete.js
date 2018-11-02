@@ -22,13 +22,14 @@ exports.default = {
 
     type: _favorites3.FavoriteType,
     args: {
-        id: {
-            name: 'ID',
-            type: new graphql.GraphQLNonNull(graphql.GraphQLID)
+        user: {
+            name: 'data',
+            type: new graphql.GraphQLNonNull(_favorites3.FavoriteType)
         }
     },
     resolve: function resolve(root, params) {
-        var deletedFavorite = _favorites2.default.findByIdAndRemove(params.id).exec();
+        var deletedFavorite = _favorites2.default.find(args).exec();
+        //const deletedFavorite = Favorite.ffindByIdAndRemove(params.id).exec()
         if (!deletedFavorite) throw Error("Error on delete favorite");
         return deletedFavorite;
     }
