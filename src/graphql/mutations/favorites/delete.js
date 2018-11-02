@@ -12,10 +12,15 @@ export default {
         }
     },
     resolve(root, params) {
-        const deletedFavorite = Favorite.find(params).exec()
+        if (params.user) {
+            const fav = usersArray.find(fav => fav.user === params.user)
+            return fav // Schema is expecting an array
+        }
+        throw Error("Error on delete favorite")
+/*const deletedFavorite = Favorite.find(params).exec()
         //const deletedFavorite = Favorite.ffindByIdAndRemove(params.id).exec()
         if (!deletedFavorite) throw Error("Error on delete favorite")
-        return deletedFavorite
+        return deletedFavorite*/
 
     }
 

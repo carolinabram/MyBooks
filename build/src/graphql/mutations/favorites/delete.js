@@ -28,9 +28,16 @@ exports.default = {
         }
     },
     resolve: function resolve(root, params) {
-        var deletedFavorite = _favorites2.default.find(params).exec();
-        //const deletedFavorite = Favorite.ffindByIdAndRemove(params.id).exec()
-        if (!deletedFavorite) throw Error("Error on delete favorite");
-        return deletedFavorite;
+        if (params.user) {
+            var fav = usersArray.find(function (fav) {
+                return fav.user === params.user;
+            });
+            return fav; // Schema is expecting an array
+        }
+        throw Error("Error on delete favorite");
+        /*const deletedFavorite = Favorite.find(params).exec()
+                //const deletedFavorite = Favorite.ffindByIdAndRemove(params.id).exec()
+                if (!deletedFavorite) throw Error("Error on delete favorite")
+                return deletedFavorite*/
     }
 };
