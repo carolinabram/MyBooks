@@ -22,14 +22,14 @@ exports.default = {
 
     type: _favorites3.FavoriteType,
     args: {
-        user: {
+        book: {
             name: 'data',
             type: new graphql.GraphQLNonNull(_favorites3.FavoriteDeleteInputType)
         }
     },
     resolve: function resolve(root, params) {
         var fav = _favorites2.default.find(function (fav) {
-            return fav.user === params.user;
+            return fav.book === params.book;
         });
         return fav;
     }

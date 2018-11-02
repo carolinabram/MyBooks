@@ -6,13 +6,13 @@ export default {
 
     type: FavoriteType,
     args: {
-        user: {
+        book: {
             name: 'data',
             type: new graphql.GraphQLNonNull(FavoriteDeleteInputType )
         }
     },
     resolve(root, params) {
-            const fav = Favorite.find(fav => fav.user === params.user)
+            const fav = Favorite.find(fav => fav.book === params.book)
             return fav
     }
 
