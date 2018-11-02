@@ -28,12 +28,12 @@ var FavoriteType = exports.FavoriteType = new GRAPHQL.GraphQLObjectType({
                 type: GRAPHQL.GraphQLNonNull(GRAPHQL.GraphQLID)
             },
 
-            user: {
+            book: {
                 type: _books.BookType,
                 resolve: function resolve(favorite) {
-                    var user = favorite.user;
+                    var book = favorite.book;
 
-                    return _books3.default.findById(user).exec();
+                    return _books3.default.findById(book).exec();
                 }
             }
         };

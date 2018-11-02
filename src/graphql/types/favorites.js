@@ -11,11 +11,11 @@ export const FavoriteType = new GRAPHQL.GraphQLObjectType({
             type: GRAPHQL.GraphQLNonNull(GRAPHQL.GraphQLID)
         },
     
-        user: {
+        book: {
             type: BookType,
             resolve(favorite) {
-                const { user } = favorite
-                return Book.findById(user).exec()
+                const { book } = favorite
+                return Book.findById(book).exec()
             }
         }
     })
