@@ -15,8 +15,7 @@ const queryIsFavorite = {
     },
     resolve(root, params) {
         const favorite = Favorite.findOne(params.book).exec();
-        if (!favorite) return false;
-        return true;
+        return favorite;
     }
 }
 
