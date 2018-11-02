@@ -8,11 +8,11 @@ export default {
     args: {
         user: {
             name: 'data',
-            type: new graphql.GraphQLNonNull(graphql.GraphQLID)
+            type:new graphql.GraphQLNonNull(graphql.GraphQLID)
         }
     },
     resolve(root, params) {
-        const deletedFavorite = Favorite.find(args).exec()
+        const deletedFavorite = Favorite.find(params).exec()
         //const deletedFavorite = Favorite.ffindByIdAndRemove(params.id).exec()
         if (!deletedFavorite) throw Error("Error on delete favorite")
         return deletedFavorite

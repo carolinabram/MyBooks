@@ -12,7 +12,7 @@ export default {
         }
     },
     resolve(root,params){
-        const deletedBook = Book.findByIdAndRemove(params.id).exec()
+        const deletedBook = Book.findByIdAndRemove(params).exec()
         if(!deletedBook) throw Error("Error on delete book")
         return deletedBook
                         

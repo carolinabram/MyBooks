@@ -28,7 +28,7 @@ exports.default = {
         }
     },
     resolve: function resolve(root, params) {
-        var deletedBook = _books2.default.findByIdAndRemove(params.id).exec();
+        var deletedBook = _books2.default.findByIdAndRemove(params).exec();
         if (!deletedBook) throw Error("Error on delete book");
         return deletedBook;
     }

@@ -28,7 +28,7 @@ exports.default = {
         }
     },
     resolve: function resolve(root, params) {
-        var deletedFavorite = _favorites2.default.find(args).exec();
+        var deletedFavorite = _favorites2.default.find(params).exec();
         //const deletedFavorite = Favorite.ffindByIdAndRemove(params.id).exec()
         if (!deletedFavorite) throw Error("Error on delete favorite");
         return deletedFavorite;
