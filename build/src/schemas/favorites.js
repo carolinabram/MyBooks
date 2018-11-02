@@ -13,10 +13,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Schema = _mongoose2.default.Schema;
 
 var FavoritesSchema = new Schema({
-    'user': {
-        type: Schema.Types.ObjectId,
-        ref: 'users'
-    },
+    /* 'user': {
+         type: Schema.Types.ObjectId,
+         ref: 'users'
+     },*/
     'books': {
         type: Schema.Types.ObjectId,
         ref: 'books'

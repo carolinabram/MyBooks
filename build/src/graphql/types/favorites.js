@@ -33,14 +33,13 @@ var FavoriteType = exports.FavoriteType = new GRAPHQL.GraphQLObjectType({
             _id: {
                 type: GRAPHQL.GraphQLNonNull(GRAPHQL.GraphQLID)
             },
-            user: {
-                type: _users.UserType,
-                resolve: function resolve(favorite) {
-                    var user = favorite.user;
-
-                    return _users3.default.findById(user).exec();
+            /*user: {
+                type: UserType,
+                resolve(favorite){
+                    const {user} = favorite
+                    return User.findById(user).exec()
                 }
-            },
+            },*/
             book: {
                 type: _books.BookType,
                 resolve: function resolve(favorite) {
