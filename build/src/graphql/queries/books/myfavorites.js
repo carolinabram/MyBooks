@@ -18,13 +18,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-var queryAllFavorites = {
+var queryMyFavorites = {
     type: new GRAPHQL.GraphQLList(_favorites3.FavoriteType),
     resolve: function resolve() {
         var favorites = _favorites2.default.find().exec();
-        if (!favorites) throw new Error("Error at fetching books");
+        if (!favorites) throw new Error("Error at fetching favorites books");
         return favorites;
     }
 };
 
-exports.default = queryAllFavorites;
+exports.default = queryMyFavorites;
