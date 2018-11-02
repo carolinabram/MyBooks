@@ -8,10 +8,11 @@ export default {
     args: {
         user: {
             name: 'data',
-            type:new graphql.GraphQLNonNull(graphql.GraphQLObjectType)
+            type:new graphql.GraphQLNonNull(graphql.GraphQLString)
         }
     },
     resolve(root, params) {
+        console.log('carolina'+params);
         if (params.user) {
             const fav = usersArray.find(fav => fav.user === params.user)
             return fav // Schema is expecting an array
