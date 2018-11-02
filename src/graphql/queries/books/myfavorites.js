@@ -7,6 +7,12 @@ import { FavoriteType } from '../../types/favorites';
 
 const queryMyFavorites = {
     type: new GRAPHQL.GraphQLList(FavoriteType),
+    args: {
+        user: {
+            name: 'user',
+            type: GRAPHQL.GraphQLNonNull(GRAPHQL.GraphQLObjectType)
+        }
+    },
     resolve() {
         const favorites = Favorite.find().exec()
         if (!favorites) throw new Error("Error at fetching favorites");

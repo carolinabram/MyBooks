@@ -25,14 +25,28 @@ var queryMyFavorites = {
     args: {
         user: {
             name: 'user',
-            type: GRAPHQL.GraphQLNonNull(GRAPHQL.GraphQLID)
+            type: GRAPHQL.GraphQLNonNull(GRAPHQL.GraphQLObjectType)
         }
     },
-    resolve: function resolve(root, params) {
-        var favorites = _favorites2.default.find(params.args).exec();
-        // const favorites = Book.findById(params.id).exec()
+    resolve: function resolve() {
+        var favorites = _favorites2.default.find().exec();
+        if (!favorites) throw new Error("Error at fetching favorites");
         return favorites;
     }
+    /* type: new GRAPHQL.GraphQLList(FavoriteType),
+     args: {
+         user: {
+             name: 'user',
+             type: GRAPHQL.GraphQLNonNull(GRAPHQL.GraphQLObjectType)
+         }
+     },
+     resolve(root, params) {
+         const favorites = Favorite.find(params.args).exec()
+         console.log('favoritos'+favorites);
+        // const favorites = Book.findById(params.id).exec()
+         return favorites
+     }*/
+
 };
 
 exports.default = queryMyFavorites;
