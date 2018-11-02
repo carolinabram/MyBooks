@@ -14,4 +14,8 @@ const FavoritesSchema = new Schema({
     }
 },{collection: 'favorites', timestamps: true});
 
+FavoritesSchema.methods.findBook = function findSimilarType(callback) {
+    return this.model('Favorites').find({ book: this.book }, callback);
+};
+
 export default mongoose.model('favorites', FavoritesSchema);

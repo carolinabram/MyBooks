@@ -23,7 +23,7 @@ var queryIsFavorite = {
     type: _favorites3.FavoriteType,
     args: {
         book: {
-            name: 'book',
+            name: 'BOOK',
             type: GRAPHQL.GraphQLNonNull(GRAPHQL.GraphQLString)
         }
     },

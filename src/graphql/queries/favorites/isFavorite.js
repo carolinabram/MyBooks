@@ -9,7 +9,7 @@ const queryIsFavorite = {
     type: FavoriteType,
     args: {
         book: {
-            name: 'book',
+            name: 'BOOK',
             type: GRAPHQL.GraphQLNonNull(GRAPHQL.GraphQLString)
         }
     },
