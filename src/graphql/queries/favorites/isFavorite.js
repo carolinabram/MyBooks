@@ -4,7 +4,7 @@ import Favorite from '../../../schemas/favorites';
 
 import { FavoriteType } from '../../types/favorites';
 
-const querySingleFavorite = {
+const queryIsFavorite = {
 
     type: FavoriteType,
     args: {
@@ -20,4 +20,4 @@ const querySingleFavorite = {
     }
 }
 
-export default querySingleFavorite;
+export default queryIsFavorite;

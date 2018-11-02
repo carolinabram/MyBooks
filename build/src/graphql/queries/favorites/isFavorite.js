@@ -18,7 +18,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-var querySingleFavorite = {
+var queryIsFavorite = {
 
     type: _favorites3.FavoriteType,
     args: {
@@ -34,4 +34,4 @@ var querySingleFavorite = {
     }
 };
 
-exports.default = querySingleFavorite;
+exports.default = queryIsFavorite;
