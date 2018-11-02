@@ -24,11 +24,11 @@ var queryIsFavorite = {
     args: {
         user: {
             name: 'ID',
-            type: GRAPHQL.GraphQLNonNull(GRAPHQL.GraphQLID)
+            type: GRAPHQL.GraphQLNonNull(GRAPHQL.GraphQLString)
         }
     },
     resolve: function resolve(root, params) {
-        var favorite = _favorites2.default.findById(params.id).exec();
+        var favorite = _favorites2.default.findById(params.user).exec();
         if (!favorite) return false;
         return true;
     }
