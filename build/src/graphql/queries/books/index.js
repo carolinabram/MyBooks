@@ -12,14 +12,14 @@ var _single = require('./single');
 
 var _single2 = _interopRequireDefault(_single);
 
-var _myFavorites = require('./myFavorites');
+var _myfavorites = require('./myfavorites');
 
-var _myFavorites2 = _interopRequireDefault(_myFavorites);
+var _myfavorites2 = _interopRequireDefault(_myfavorites);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
     allBooks: _all2.default,
     singleBook: _single2.default,
-    myFavorites: _myFavorites2.default
+    myFavorites: _myfavorites2.default
 };
