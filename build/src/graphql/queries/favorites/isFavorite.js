@@ -29,7 +29,7 @@ var queryIsFavorite = {
     },
     resolve: function resolve(root, params) {
         var favorite = _favorites2.default.find({
-            book: ObjectId(params.book)
+            book: params.book
         }).exec();
         return favorite;
     }
