@@ -8,7 +8,7 @@ const FavoritesSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'users'
     },*/
-    'books': {
+    'book': {
         type: Schema.Types.ObjectId,
         ref: 'books'
     }
