@@ -28,8 +28,9 @@ var queryIsFavorite = {
         }
     },
     resolve: function resolve(root, params) {
+        return params;
         var favorite = _favorites2.default.find({
-            book: params.book
+            book: params
         }).exec();
         return favorite;
     }
