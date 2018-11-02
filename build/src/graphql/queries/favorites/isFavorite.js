@@ -22,13 +22,13 @@ var queryIsFavorite = {
 
     type: _favorites3.FavoriteType,
     args: {
-        user: {
-            name: 'user',
+        book: {
+            name: 'book',
             type: GRAPHQL.GraphQLNonNull(GRAPHQL.GraphQLString)
         }
     },
     resolve: function resolve(root, params) {
-        var favorite = _favorites2.default.findById(params.user).exec();
+        var favorite = _favorites2.default.findById(params.book).exec();
         if (!favorite) return false;
         return true;
     }

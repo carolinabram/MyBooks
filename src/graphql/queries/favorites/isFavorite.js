@@ -8,13 +8,13 @@ const queryIsFavorite = {
 
     type: FavoriteType,
     args: {
-        user: {
-            name: 'user',
+        book: {
+            name: 'book',
             type: GRAPHQL.GraphQLNonNull(GRAPHQL.GraphQLString)
         }
     },
     resolve(root, params) {
-        const favorite = Favorite.findById(params.user).exec()
+        const favorite = Favorite.findById(params.book).exec()
         if (!favorite) return false;
         return true;
     }
