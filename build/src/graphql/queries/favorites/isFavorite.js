@@ -30,7 +30,7 @@ var queryIsFavorite = {
     resolve: function resolve(root, params) {
         var favorite = _favorites2.default.findOne({
             where: {
-                book: params.book
+                book: '5bdc54451751e9001679a4d9'
             }
         }).exec();
         return favorite;

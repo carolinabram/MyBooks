@@ -16,7 +16,7 @@ const queryIsFavorite = {
     resolve(root, params) {
         const favorite = Favorite.findOne({
             where: {
-                book: params.book
+                book: '5bdc54451751e9001679a4d9'
             }
         }).exec();
         return favorite;
