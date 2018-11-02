@@ -28,7 +28,11 @@ var queryIsFavorite = {
         }
     },
     resolve: function resolve(root, params) {
-        var favorite = _favorites2.default.findOne(params.book).exec();
+        var favorite = _favorites2.default.findOne({
+            where: {
+                book: params.book
+            }
+        }).exec();
         return favorite;
     }
 };
