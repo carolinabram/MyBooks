@@ -9,7 +9,7 @@ const queryIsFavorite = {
     type: FavoriteType,
     args: {
         user: {
-            name: 'ID',
+            name: 'user',
             type: GRAPHQL.GraphQLNonNull(GRAPHQL.GraphQLString)
         }
     },
