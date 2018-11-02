@@ -25,8 +25,7 @@ var queryMyFavorites = {
     args: {
         user: {
             name: 'user',
-            type: Schema.Types.ObjectId,
-            ref: 'user'
+            type: GRAPHQL.GraphQLNonNull(GRAPHQL.GraphQLID)
         }
     },
     resolve: function resolve(root, params) {

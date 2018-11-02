@@ -10,7 +10,7 @@ const queryMyFavorites = {
     args: {
         user: {
             name: 'user',
-            type: Schema.Types.ObjectId
+            type: GRAPHQL.GraphQLNonNull(GRAPHQL.GraphQLID)
         }
     },
     resolve(root, params) {
