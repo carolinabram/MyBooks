@@ -1,6 +1,5 @@
 import Favorite from '../../../schemas/favorites';
-import { FavoriteType } from '../../types/favorites';
-import { BookType } from '../../types/books';
+import { FavoriteType, FavoriteDeleteInputType  } from '../../types/favorites';
 import * as graphql from 'graphql';
 
 export default {
@@ -9,12 +8,12 @@ export default {
     args: {
         user: {
             name: 'data',
-            type: BookType,
+            type: new graphql.GraphQLNonNull(FavoriteDeleteInputType )
         }
     },
     resolve(root, params) {
             const fav = Favorite.find(fav => fav.user === params.user)
-            return fav // Schema is expecting an array
+            return fav
     }
 
 }

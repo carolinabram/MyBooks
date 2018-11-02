@@ -10,8 +10,6 @@ var _favorites2 = _interopRequireDefault(_favorites);
 
 var _favorites3 = require('../../types/favorites');
 
-var _books = require('../../types/books');
-
 var _graphql = require('graphql');
 
 var graphql = _interopRequireWildcard(_graphql);
@@ -26,13 +24,13 @@ exports.default = {
     args: {
         user: {
             name: 'data',
-            type: _books.BookType
+            type: new graphql.GraphQLNonNull(_favorites3.FavoriteDeleteInputType)
         }
     },
     resolve: function resolve(root, params) {
         var fav = _favorites2.default.find(function (fav) {
             return fav.user === params.user;
         });
-        return fav; // Schema is expecting an array
+        return fav;
     }
 };

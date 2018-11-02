@@ -30,3 +30,13 @@ export const FavoriteInputType = new GRAPHQL.GraphQLInputObjectType({
         }
     })
 })
+
+export const FavoriteDeleteInputType = new GRAPHQL.GraphQLInputObjectType({
+    name: 'deleteFavorite',
+    description: "delete favorite Book",
+    fields: () => ({
+        book: {
+            type: GRAPHQL.GraphQLString
+        }
+    })
+})

@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.FavoriteInputType = exports.FavoriteType = undefined;
+exports.FavoriteDeleteInputType = exports.FavoriteInputType = exports.FavoriteType = undefined;
 
 var _graphql = require('graphql');
 
@@ -43,6 +43,18 @@ var FavoriteType = exports.FavoriteType = new GRAPHQL.GraphQLObjectType({
 var FavoriteInputType = exports.FavoriteInputType = new GRAPHQL.GraphQLInputObjectType({
     name: 'addFavorite',
     description: "Add favorite Book",
+    fields: function fields() {
+        return {
+            book: {
+                type: GRAPHQL.GraphQLString
+            }
+        };
+    }
+});
+
+var FavoriteDeleteInputType = exports.FavoriteDeleteInputType = new GRAPHQL.GraphQLInputObjectType({
+    name: 'deleteFavorite',
+    description: "delete favorite Book",
     fields: function fields() {
         return {
             book: {
