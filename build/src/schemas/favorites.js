@@ -17,7 +17,7 @@ var FavoritesSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'users'
     },
-    'book': {
+    'books': {
         type: Schema.Types.ObjectId,
         ref: 'books'
     }
