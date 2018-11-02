@@ -8,6 +8,8 @@ var _graphql = require('graphql');
 
 var GRAPHQL = _interopRequireWildcard(_graphql);
 
+var _users = require('../../types/users');
+
 var _favorites = require('../../../schemas/favorites');
 
 var _favorites2 = _interopRequireDefault(_favorites);
@@ -21,9 +23,10 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 var queryMyFavorites = {
     type: new GRAPHQL.GraphQLList(_favorites3.FavoriteType),
     args: {
-        id: {
-            name: 'ID',
-            type: GRAPHQL.GraphQLNonNull(GRAPHQL.GraphQLID)
+        user: {
+            name: 'user',
+            type: Schema.Types.ObjectId,
+            ref: 'user'
         }
     },
     resolve: function resolve(root, params) {

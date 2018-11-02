@@ -1,14 +1,16 @@
 import * as GRAPHQL from 'graphql';
 
+import { UserType } from '../../types/users';
+
 import Favorite from '../../../schemas/favorites';
 import { FavoriteType } from '../../types/favorites';
 
 const queryMyFavorites = {
     type: new GRAPHQL.GraphQLList(FavoriteType),
     args: {
-        id: {
-            name: 'ID',
-            type: GRAPHQL.GraphQLNonNull(GRAPHQL.GraphQLID)
+        user: {
+            name: 'user',
+            type: Schema.Types.ObjectId
         }
     },
     resolve(root, params) {
