@@ -1,5 +1,6 @@
 import Favorite from '../../../schemas/favorites';
 import { FavoriteType } from '../../types/favorites';
+import { BookType } from '../../types/books';
 import * as graphql from 'graphql';
 
 export default {
@@ -8,22 +9,12 @@ export default {
     args: {
         user: {
             name: 'data',
-            type:new graphql.GraphQLNonNull(graphql.GraphQLString)
+            type: BookType,
         }
     },
     resolve(root, params) {
-        console.log('carolina'+params);
-        if (params.user) {
-            const fav = usersArray.find(fav => fav.user === params.user)
+            const fav = Favorite.find(fav => fav.user === params.user)
             return fav // Schema is expecting an array
-        }
-        throw Error("Error on delete favorite"+params)
-/*const deletedFavorite = Favorite.find(params).exec()
-        //const deletedFavorite = Favorite.ffindByIdAndRemove(params.id).exec()
-        if (!deletedFavorite) throw Error("Error on delete favorite")
-        return deletedFavorite*/
-
     }
-
 
 }
