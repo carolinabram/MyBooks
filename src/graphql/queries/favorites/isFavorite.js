@@ -8,7 +8,7 @@ const queryIsFavorite = {
 
     type: FavoriteType,
     args: {
-        id: {
+        user: {
             name: 'ID',
             type: GRAPHQL.GraphQLNonNull(GRAPHQL.GraphQLID)
         }

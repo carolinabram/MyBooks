@@ -22,7 +22,7 @@ var queryIsFavorite = {
 
     type: _favorites3.FavoriteType,
     args: {
-        id: {
+        user: {
             name: 'ID',
             type: GRAPHQL.GraphQLNonNull(GRAPHQL.GraphQLID)
         }

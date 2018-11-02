@@ -22,15 +22,14 @@ exports.default = {
 
     type: _favorites3.FavoriteType,
     args: {
-        book: {
-            name: 'data',
-            type: new graphql.GraphQLNonNull(_favorites3.FavoriteDeleteInputType)
+        id: {
+            name: 'ID',
+            type: new graphql.GraphQLNonNull(graphql.GraphQLID)
         }
     },
     resolve: function resolve(root, params) {
-        var fav = _favorites2.default.find(function (fav) {
-            return fav.book === params.book;
-        });
-        return fav;
+        var deletedFavorite = _favorites2.default.findByIdAndRemove(params).exec();
+        if (!deletedFavorite) throw Error("Error on delete favorite");
+        return deletedFavorite;
     }
 };

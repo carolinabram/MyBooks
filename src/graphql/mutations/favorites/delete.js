@@ -1,19 +1,22 @@
 import Favorite from '../../../schemas/favorites';
-import { FavoriteType, FavoriteDeleteInputType  } from '../../types/favorites';
+import { FavoriteType } from '../../types/favorites';
 import * as graphql from 'graphql';
 
 export default {
 
     type: FavoriteType,
     args: {
-        book: {
-            name: 'data',
-            type: new graphql.GraphQLNonNull(FavoriteDeleteInputType )
+        id: {
+            name: 'ID',
+            type: new graphql.GraphQLNonNull(graphql.GraphQLID)
         }
     },
     resolve(root, params) {
-            const fav = Favorite.find(fav => fav.book === params.book)
-            return fav
+        const deletedFavorite = Favorite.findByIdAndRemove(params).exec()
+        if (!deletedFavorite) throw Error("Error on delete favorite")
+        return deletedFavorite
+
     }
+
 
 }
