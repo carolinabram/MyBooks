@@ -8,7 +8,7 @@ export default {
     args: {
         user: {
             name: 'data',
-            type: new graphql.GraphQLNonNull(FavoriteType)
+            type: new graphql.GraphQLNonNull(graphql.GraphQLID)
         }
     },
     resolve(root, params) {

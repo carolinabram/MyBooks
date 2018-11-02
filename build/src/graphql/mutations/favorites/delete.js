@@ -24,7 +24,7 @@ exports.default = {
     args: {
         user: {
             name: 'data',
-            type: new graphql.GraphQLNonNull(_favorites3.FavoriteType)
+            type: new graphql.GraphQLNonNull(graphql.GraphQLID)
         }
     },
     resolve: function resolve(root, params) {
