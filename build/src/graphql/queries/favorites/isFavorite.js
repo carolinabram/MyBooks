@@ -28,10 +28,8 @@ var queryIsFavorite = {
         }
     },
     resolve: function resolve(root, params) {
-        var favorite = _favorites2.default.findOne({
-            where: {
-                book: '5bdc54451751e9001679a4d9'
-            }
+        var favorite = _favorites2.default.find({
+            book: ObjectId(params.book)
         }).exec();
         return favorite;
     }

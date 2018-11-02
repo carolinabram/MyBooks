@@ -14,10 +14,8 @@ const queryIsFavorite = {
         }
     },
     resolve(root, params) {
-        const favorite = Favorite.findOne({
-            where: {
-                book: '5bdc54451751e9001679a4d9'
-            }
+        const favorite = Favorite.find({
+            book: ObjectId(params.book),
         }).exec();
         return favorite;
     }
