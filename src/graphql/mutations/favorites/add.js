@@ -1,4 +1,4 @@
-import Favorite from '../../../schemas/books';
+import Favorite from '../../../schemas/favorites';
 import { FavoriteType, FavoriteInputType } from '../../types/favorites';
 import * as graphql from 'graphql';
 

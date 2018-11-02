@@ -1,7 +1,5 @@
 import * as GRAPHQL from 'graphql';
-
 import { CategoryType } from './categories';
-
 import Category from '../../schemas/categories';
 
 export const BookType = new GRAPHQL.GraphQLObjectType({
