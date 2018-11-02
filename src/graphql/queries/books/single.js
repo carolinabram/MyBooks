@@ -1,7 +1,6 @@
 import * as GRAPHQL from 'graphql';
 
 import Book from '../../../schemas/books';
-
 import { BookType } from '../../types/books';
 
 const querySingleBook = {

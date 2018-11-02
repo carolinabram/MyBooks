@@ -20,9 +20,15 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 var queryMyFavorites = {
     type: new GRAPHQL.GraphQLList(_favorites3.FavoriteType),
-    resolve: function resolve() {
-        var favorites = _favorites2.default.find().exec();
-        if (!favorites) throw new Error("Error at fetching favorites books");
+    args: {
+        id: {
+            name: 'ID',
+            type: GRAPHQL.GraphQLNonNull(GRAPHQL.GraphQLID)
+        }
+    },
+    resolve: function resolve(root, params) {
+        var favorites = _favorites2.default.find(params.args).exec();
+        // const favorites = Book.findById(params.id).exec()
         return favorites;
     }
 };
