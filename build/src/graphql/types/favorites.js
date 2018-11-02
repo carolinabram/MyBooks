@@ -3,17 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.FavoriteType = undefined;
+exports.FavoritesInputType = exports.FavoritesType = undefined;
 
 var _graphql = require('graphql');
 
 var GRAPHQL = _interopRequireWildcard(_graphql);
-
-var _users = require('./users');
-
-var _users2 = require('../../schemas/users');
-
-var _users3 = _interopRequireDefault(_users2);
 
 var _books = require('./books');
 
@@ -25,21 +19,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-var FavoriteType = exports.FavoriteType = new GRAPHQL.GraphQLObjectType({
-    name: 'Favorite',
-    description: 'Types of Favorite',
+var FavoritesType = exports.FavoritesType = new GRAPHQL.GraphQLObjectType({
+    name: 'Favorites',
+    description: 'Types of Books',
     fields: function fields() {
         return {
             _id: {
                 type: GRAPHQL.GraphQLNonNull(GRAPHQL.GraphQLID)
             },
-            /*user: {
-                type: UserType,
-                resolve(favorite){
-                    const {user} = favorite
-                    return User.findById(user).exec()
-                }
-            },*/
             book: {
                 type: _books.BookType,
                 resolve: function resolve(favorite) {
@@ -48,7 +35,17 @@ var FavoriteType = exports.FavoriteType = new GRAPHQL.GraphQLObjectType({
                     return _books3.default.findById(book).exec();
                 }
             }
-
+        };
+    }
+});
+var FavoritesInputType = exports.FavoritesInputType = new GRAPHQL.GraphQLInputObjectType({
+    name: 'AddFavorite',
+    description: 'libros favoritos',
+    fields: function fields() {
+        return {
+            book: {
+                type: GRAPHQL.GraphQLString
+            }
         };
     }
 });
